@@ -1,32 +1,173 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Profile Card</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profile Cards</title>
+  <style>
+    /* Add your CSS styles here */
+    
+
+body {
+    margin: 0;
+    height: 100vh;
+    background-color: white;
+    font-family: 'Arial', sans-serif;
+}
+
+.main-div{
+    /* border: 2px solid black; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 10px;
+}
+
+.card-container {
+    position: relative;
+    width: 300px; /* Adjust the width as needed */
+    height: 330px; /* Adjust the height as needed */
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    background-color: #e9ecef; 
+    margin: 15px;
+}
+
+.card-background .card-bg-image {
+    width: 100%;
+    height: auto;
+    object-fit: cover; /* This will cover the entire area of the container */
+}
+
+.card-content {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.profile-picture-container {
+    margin-top: 55px;
+    width: 80px; /* Adjust the size as needed */
+    height: 80px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-bottom: 10px;
+    border: 1px solid #fff; /* Optional: adds a white border around the profile picture */
+    position: absolute;
+    margin-top: -122px;
+}
+
+.profile-picture {
+    width: 100%;
+    height: 109%;
+    object-fit: cover;
+}
+
+.name {
+    font-size: 1.2rem;
+    color: #333;
+
+}
+
+.description {
+    color: #d1d1d1; /* Adjust text color as needed */
+    font-size: 0.9rem;
+}
+.company-logo-container {
+    margin-top: -16px;
+    margin-bottom: 16px; /* Adds space between the name and the logo */
+}
+
+.company-logo {
+     width: 120px;
+    height: 80px;
+    object-fit: contain;
+    mix-blend-mode: multiply;
+}
+
+.title {
+    font-size: 0.9rem;
+    color: #666;
+    /* margin-bottom: 20px; */
+}
+
+.furquan{
+    margin-top: 160px;
+    bottom:80px;
+}
+  </style>
 </head>
 <body>
-  <div class="main-div">
-    
-</div> <div class="card-container">
-  <div class="card-background">
-      <img src="GEEKSTER.png" alt="Background" class="card-bg-image">
-  </div>
-  <div class="card-content">
-      <div class="profile-picture-container">
-          <img src="ajay kumar.jpg" alt="Bittoo Aggarwal" class="profile-picture">
-      </div>
-       <div class="furquan">
-      <h2 class="name">Ajay Kumar</h2>
-     <p class="title">From Mechanical Engineer To Software Emgineer</p>
-  </div>
-      <div class="company-logo-container">
-<img src="mountblue.png" alt="Company Logo" class="company-logo">
-</div>
-  </div>
-</div>
-</div>
-<script src="script.js"></script>
+  <div id="profileContainer"></div>
+
+  <script>
+    // Sample arrays for profile data
+    const names = [
+      "Pratyas Kumar",
+      "Milind Vedi",
+      "Gautam Pawar",
+      "Pirjada Mohammedtanvir Jamilahemad"
+    ];
+    const profileImages = [
+      "WhatsApp Image 2023-07-04 at 8.43.43 PM.jpeg",
+      "WhatsApp Image 2023-06-08 at 6.50.41 PM.jpeg",
+      "WhatsApp Image 2023-07-05 at 11.40.27 AM.jpeg",
+      "WhatsApp Image 2023-01-12 at 11.12.00 PM - Tanvir Pirjada.jpeg"
+    ];
+    const companyLogos = [
+      "Mountblue Ventures",
+      "Mountblue_Ventures",
+      "Mountblue_Ventures",
+      "Mountblue_Ventures"
+    ];
+
+    // Function to create a profile card
+    function createProfileCard(name, profileImage, companyLogo) {
+      const cardContainer = document.createElement("div");
+      cardContainer.className = "card-container";
+
+      cardContainer.innerHTML = `
+        <div class="card-background">
+          <img src="GEEKSTER.png" alt="Background" class="card-bg-image">
+        </div>
+        <div class="card-content">
+          <div class="profile-picture-container">
+            <img src="img/${profileImage}" alt="${name}" class="profile-picture">
+          </div>
+          <div class="furquan">
+            <h2 class="name">${name}</h2>
+            <p class="title">From Mechanical Engineer To Software Engineer</p>
+          </div>
+          <div class="company-logo-container">
+            <img src="logo/${companyLogo}_logo.png" alt="Company Logo" class="company-logo">
+          </div>
+        </div>
+      `;
+
+      return cardContainer;
+    }
+
+    // Function to add profiles to the container
+    function addProfilesToContainer() {
+      const profileContainer = document.getElementById("profileContainer");
+
+      // Loop through the arrays and create cards
+      for (let i = 0; i < names.length; i++) {
+        const profileCard = createProfileCard(names[i], profileImages[i], companyLogos[i]);
+        profileContainer.appendChild(profileCard);
+      }
+    }
+
+    // Call the function to add profiles to the container
+    addProfilesToContainer();
+  </script>
 </body>
 </html>
