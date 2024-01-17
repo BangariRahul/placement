@@ -33,6 +33,7 @@ body {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     background-color: #e9ecef; 
     margin: 15px;
+
 }
 
 .card-background .card-bg-image {
@@ -103,6 +104,12 @@ body {
     margin-top: 160px;
     bottom:80px;
 }
+
+#profileContainer{
+  display: flex;
+   flex-direction: row; /* or column, depending on your needs */
+   flex-wrap: wrap;
+}
   </style>
 </head>
 <body>
@@ -135,6 +142,7 @@ body {
       cardContainer.className = "card-container";
 
       cardContainer.innerHTML = `
+      <div>
         <div class="card-background">
           <img src="GEEKSTER.png" alt="Background" class="card-bg-image">
         </div>
@@ -150,6 +158,7 @@ body {
             <img src="logo/${companyLogo}_logo.png" alt="Company Logo" class="company-logo">
           </div>
         </div>
+      </div> 
       `;
 
       return cardContainer;
