@@ -95,9 +95,10 @@ body {
 }
 
 .title {
+  /* width:80%;   */
     font-size: 0.9rem;
     color: #666;
-    /* margin-bottom: 20px; */
+    /* margin-bottom: auto; */
 }
 
 .furquan{
@@ -298,32 +299,32 @@ body {
   "Mountblue_Ventures",
   "Mountblue_Ventures",
   "Enterprise_Bot",
-  "MOJITO_LABS",
+  "mojito_labs",
   "TSYS",
   "Shriram_Technologies",
   "TSYS",
-  "Technovert",
+  "tezo",
   "Mountblue_Ventures",
   "Mountblue_Ventures",
   "Mountblue_Ventures",
   "WebMD",
   "Orane",
-  "Geekster",
+  "geekster",
   "Reward360",
   "Reward360",
   "Reward360",
   "Reward360",
   "Reward360",
   "Reward360",
-  "Athmin",
+  "athmin",
   "Mountblue_Ventures",
-  "Spandana",
-  "Haspaces",
+  "spandana",
+  "haspaces",
   "Rchill",
   "Rchill",
   "Rchill",
-  "Analytic_Edge",
-  "Analytic_Edge",
+  "analytic_edge",
+  "analytic_edge",
   "Accion_Labs",
   "Gulbrandsen",
   "WebMD",
@@ -334,37 +335,118 @@ body {
   "Coedify",
   "Bitxia_Tech",
   "CBSL",
-  "Unravel",
+  "unravel",
   "Decimal_Technology",
   "Inspiron_Labs",
-  "Progress",
+  "progress",
   "Inspiron_Labs",
-  "Innostax,_Progress_(joined_Innostax_due_to_job_role)",
+  "innostax",
   "MTechZila",
   "Innostax",
   "Go_Digital",
-  "Fit_Page",
+  "fitpage",
   "Trak_N_Tell",
   "Trak_N_Tell",
-  "Entropik",
-  "Entropik",
+  "entropik_tech",
+  "entropik_tech",
   "Idea_Forge",
   "Eupheus",
   "I2V",
   "Flurn",
   "Dehaat",
   "WebMD",
-  "AVRL",
+  "avrl",
   "Technous",
-  "Apptware",
-  "Indus",
+  "indus",
   "Flurn",
-  "Bytestrone_India_Private_Limited"
+  "Bytestrone_India_Private_Limited",
+  "testhouse"
 ]
+ 
+const titles = [
+  "ECE Engineer to Software Developer Engineer",
+  "Successfully Placed as a Software Developer Engineer",
+  "Civil Engineer to Software Developer Engineer",
+  "Electrical Engineer to Software Developer Engineer",
+  "Successfully Placed as a Software Developer Engineer",
+  "Civil Engineer to Software Developer Engineer",
+  "Successfully Placed as a Software Developer Engineer",
+  "Bio. Tech Engineer to Software Developer Engineer",
+  "Successfully Placed as a Software Developer Engineer",
+  "Electrical Engineer to Software Developer Engineer",
+  "Bio. Tech Engineer to Software Developer Engineer",
+  "Civil Engineer to Software Developer Engineer",
+  "Civil Engineer to Software Developer Engineer",
+  "ECE Engineer to Software Developer Engineer",
+  "Successfully Placed as a Software Developer Engineer", 
+  "Successfully Placed as a Software Developer Engineer",
+  "Successfully Placed as a Software Developer Engineer",
+  "Successfully Placed as a Software Developer Engineer",
+  "ECE Engineer to Software Developer Engineer",
+  "Successfully Placed as a Software Developer Engineer",
+  "Instrumentation Engineer to Software Developer Engineer",
+  "Successfully Placed as a Software Developer Engineer",
+  "Civil Engineer to Software Developer Engineer",
+  "Successfully Placed as a Software Developer Engineer",
+  "Mechanical Engineer to Software Developer Engineer",
+  "Mechanical Engineer to Software Developer Engineer",
+  "Civil Engineer to Software Developer Engineer",
+  "Successfully Placed as a Software Developer Engineer",
+  "ECE Engineer to Software Developer Engineer",
+  "Civil Engineer to Software Developer Engineer",
+  "Civil Engineer to Software Developer Engineer",
+  "Successfully Placed as a Software Developer Engineer",
+  "Successfully Placed as a Software Developer Engineer",
+  "Mechanical Engineer to Software Developer Engineer",
+  "Civil Engineer to Software Developer Engineer",
+  "ECE Engineer to Software Developer Engineer",
+  "Mechanical Engineer to Software Developer Engineer",
+  "Electrical Engineer to Software Developer Engineer",
+  "Successfully Placed as a Software Developer Engineer",
+  "Successfully Placed as a Software Developer Engineer",
+  "Successfully Placed as a Software Developer Engineer",
+  "Mechanical Engineer to Software Developer Engineer",
+  "ECE Engineer to Software Developer Engineer",
+  "Successfully Placed as a Software Developer Engineer",
+  "Mechanical Engineer to Software Developer Engineer",
+  "Successfully Placed as a Software Developer Engineer",
+  "Successfully Placed as a Software Developer Engineer",
+  "ECE Engineer to Software Developer Engineer",
+  "Instrumentation Engineering Engineer to Software Developer Engineer",
+  "Successfully Placed as a Software Developer Engineer",
+  "Civil Engineer to Software Developer Engineer",
+  "Successfully Placed as a Software Developer Engineer",
+  "Successfully Placed as a Software Developer Engineer",
+  "Mechanical Engineer to Software Developer Engineer",
+  "Electrical Engineer to Software Developer Engineer",
+  "Mathematics Engineer to Software Developer Engineer",
+  "Successfully Placed as a Software Developer Engineer",
+  "Mechanical Engineer to Software Developer Engineer",
+  "Successfully Placed as a Software Developer Engineer",
+  "ECE Engineer to Software Developer Engineer",
+  "ECE Engineer to Software Developer Engineer",
+  "Successfully Placed as a Software Developer Engineer",
+  "Mechanical Engineer to Software Developer Engineer",
+  "Mechanical Engineer to Software Developer Engineer",
+  "ECE Engineer to Software Developer Engineer",
+  "Successfully Placed as a Software Developer Engineer",
+  "Mechanical Engineer to Software Developer Engineer",
+  "Mechanical Engineer to Software Developer Engineer",
+  "Successfully Placed as a Software Developer Engineer",
+  "Successfully Placed as a Software Developer Engineer",
+  "Successfully Placed as a Software Developer Engineer",
+  "Civil Engineer to Software Developer Engineer",
+  "Civil Engineer to Software Developer Engineer",
+  "Successfully Placed as a Software Developer Engineer",
+  "Electrical Engineer to Software Developer Engineer",
+  "Mechanical Engineer to Software Developer Engineer",
+  "Mechanical Engineer to Software Developer Engineer",
+  "Successfully Placed as a Software Developer Engineer",
+];
 
 
     // Function to create a profile card
-    function createProfileCard(name, profileImage, companyLogo) {
+    function createProfileCard(name, profileImage, companyLogo, titles) {
       const cardContainer = document.createElement("div");
       cardContainer.className = "card-container";
 
@@ -379,7 +461,7 @@ body {
           </div>
           <div class="furquan">
             <h2 class="name">${name}</h2>
-            <p class="title">From Mechanical Engineer To Software Engineer</p>
+            <p class="title">${titles}</p>
           </div>
           <div class="company-logo-container">
             <img src="logo/${companyLogo}_logo.png" alt="Company Logo" class="company-logo">
@@ -397,7 +479,7 @@ body {
 
       // Loop through the arrays and create cards
       for (let i = 0; i < names.length; i++) {
-        const profileCard = createProfileCard(names[i], profileImages[i], companyLogos[i]);
+        const profileCard = createProfileCard(names[i], profileImages[i], companyLogos[i] , titles[i]);
         profileContainer.appendChild(profileCard);
       }
     }
